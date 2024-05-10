@@ -1,12 +1,10 @@
-// import { useContext } from "react";
-// import { AuthContext } from "../../AuthProvider/AuthProvider";
+
 import axios from "axios";
 import Swal from "sweetalert2";
 
 const AddBook = () => {
 
 
-    // const { user } = useContext(AuthContext)
 
     const handleAddBook = e => {
         e.preventDefault();
@@ -31,7 +29,7 @@ const AddBook = () => {
 
         axios.post('http://localhost:5000/books', newBook)
             .then(data => {
-                console.log(data.data);
+                console.log( data.data );
 
                 if (data.data.insertedId) {
                     Swal.fire({

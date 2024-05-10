@@ -3,7 +3,7 @@ import bannerImg from '../../assets/images/banner2.png';
 
 const Banner = () => {
     return (
-        <div className=''>
+        <div className='mb-28'>
             <div className="banner min-h-[75vh] md:min-h-[75vh] max-w-full">
                 <div className="relative min-h-[75vh] md:min-h-[75vh]">
                     <div className="space-y-3 absolute top-2/4 left-2/4 -translate-x-[50%] -translate-y-[20%] text-center min-h-screen w-full px-5 z-30">

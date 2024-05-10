@@ -5,6 +5,8 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { LuEye, LuEyeOff } from "react-icons/lu";
 import { useForm } from "react-hook-form"
 import Swal from "sweetalert2";
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
 
 
 const SignUp = () => {
@@ -25,13 +27,13 @@ const SignUp = () => {
         const { name, email, photo, password } = data;
 
         if (password.length < 6) {
-            return alert("Your password must be at least 6 characters")
-        }
-        else if (!/[a-z]/.test(password)) {
-            return alert('Your password should contain at least one lower case')
+            return toast.error("Your password must be at least 6 characters")
         }
         else if (!/[A-Z]/.test(password)) {
-            return alert('Your password should contain at least one upper case')
+            return toast.error('Your password should contain at least one capital letter')
+        }
+        else if (!/[@#$%^&*]/.test(password)) {
+            return toast.error('Your password should contain at least one special character')
         }
 
         createUser(email, password)
@@ -67,19 +69,19 @@ const SignUp = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 bg-white items-center shadow-lg">
                     <div className="p-10 bg-white"  data-aos="zoom-in" data-aos-duration="500">
                         <div className="mb-4">
-                            <h2 className="text-5xl font-semibold text-center text-red">Sign Up</h2>
+                            <h2 className="text-5xl font-semibold text-center text-red-500">Sign Up</h2>
                         </div>
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="space-y-2">
                                 <input type="text" name="name" placeholder="Name" className="border-b border-[#5B5B5B] py-3 outline-none w-full bg-transparent" {...register("name", { required: true })} />
-                                {errors.name && <span className="text-red text-sm">This field is required</span>}
+                                {errors.name && <span className="text-red-500 text-sm">This field is required</span>}
 
                                 <input type="email" name="email" placeholder="Email" className="border-b border-[rgb(91,91,91)] py-3 outline-none w-full bg-transparent" {...register("email", { required: true })} />
 
-                                {errors.email && <span className="text-red text-sm">This field is required</span>}
+                                {errors.email && <span className="text-red-500 text-sm">This field is required</span>}
 
                                 <input type="url" name="photo" placeholder="Photo URL" className="border-b border-[#5B5B5B] py-3 outline-none w-full bg-transparent" {...register("photo", { required: true })} />
-                                {errors.photo && <span className="text-red text-sm">This field is required</span>}
+                                {errors.photo && <span className="text-red-500 text-sm">This field is required</span>}
 
                                 <div className="relative">
                                     <input type={showPassword ? 'text' : 'password'} name="password" placeholder="Password" className="border-b border-[#5B5B5B] py-3 outline-none w-full bg-transparent" {...register("password", { required: true })} />
@@ -88,12 +90,12 @@ const SignUp = () => {
                                         onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-2">
 
                                         {showPassword ?
-                                            <LuEye className="text-red" size={20} /> :
-                                            <LuEyeOff className="text-red" size={20} />}
+                                            <LuEye className="text-red-500" size={20} /> :
+                                            <LuEyeOff className="text-red-500" size={20} />}
                                     </p>
                                 </div>
 
-                                {errors.password && <span className="text-red text-sm">This field is required</span>}
+                                {errors.password && <span className="text-red-500 text-sm">This field is required</span>}
                                 <br />
                                 <input type="checkbox" name="" id="" />
 
