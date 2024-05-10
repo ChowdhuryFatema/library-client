@@ -42,3 +42,15 @@ h2, h3, h4 {
     background-attachment: fixed;
     background-size: cover;
 }
+
+.overlay1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 50%;
+    width: 100%;
+    height: 100%;
+}
+
