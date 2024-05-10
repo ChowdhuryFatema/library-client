@@ -11,8 +11,11 @@ const NavBar = () => {
     const [theme, setTheme] = useState('');
 
     const navLinks = <>
-        <NavLink className="md:text-lg py-2 px-3 font-bold" to="/">Home</NavLink>
-        <NavLink className="md:text-lg py-2 px-3 font-bold" to="/login">Login</NavLink>
+        <NavLink className="md:text-lg py-2 px-3 font-semibold" to="/">Home</NavLink>
+        <NavLink className="md:text-lg py-2 px-3 font-semibold" to="/addBook">Add Book</NavLink>
+        <NavLink className="md:text-lg py-2 px-3 font-semibold" to="/allBook">All Books</NavLink>
+        <NavLink className="md:text-lg py-2 px-3 font-semibold" to="/borrowedBook">Borrowed Books</NavLink>
+        <NavLink className="md:text-lg py-2 px-3 font-semibold" to="/login">Login</NavLink>
     </>
 
     const handleLogOut = () => {

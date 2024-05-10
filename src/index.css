@@ -23,13 +23,22 @@ h2, h3, h4 {
 
 .banner {
     background-image: url('assets/images/banner.jpg');
-    background-position: cover;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover;
 }
 
 .logo, .active {
     background: -webkit-linear-gradient(#E855DE, #5400EE);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.add-book {
+    background-image: url('assets/images/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
