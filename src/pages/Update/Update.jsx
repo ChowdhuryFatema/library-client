@@ -35,7 +35,7 @@ const Update = () => {
         }
         console.log(updatedBook)
 
-        axios.put(`import.meta.env.VITE_API_URL/${_id}`, updatedBook)
+        axios.put(`http://localhost:5000/books/${_id}`, updatedBook)
         .then(data => {
             console.log(data.data);
 
