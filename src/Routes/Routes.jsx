@@ -7,6 +7,8 @@ import SignUp from "../pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import AddBook from "../pages/AddBook/AddBook";
 import AllBooks from "../pages/AllBooks/AllBooks";
+import Update from "../pages/Update/Update";
+import SingleCategory from "../pages/SingleCategory/SingleCategory";
 
 const router = createBrowserRouter([
     {
@@ -33,7 +35,16 @@ const router = createBrowserRouter([
         {
           path: '/allBook',
           element: <PrivateRoute><AllBooks></AllBooks></PrivateRoute>,
-          loader: () => fetch('http://localhost:5000/books'),
+        },
+        {
+          path: '/update/:id',
+          element: <PrivateRoute><Update></Update></PrivateRoute>,
+          loader: ({params}) => fetch(import.meta.env.VITE_API_URL/params.id)
+        },
+        {
+          path: '/books/:category',
+          element: <PrivateRoute><SingleCategory></SingleCategory></PrivateRoute>,
+          loader: ({params}) => fetch(`http://localhost:5000/book/${params.category}`)
         },
   
       ],

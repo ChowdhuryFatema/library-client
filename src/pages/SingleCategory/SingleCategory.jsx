@@ -1,11 +1,10 @@
+import { useLoaderData } from "react-router-dom";
+import BookCard from "../AllBooks/BookCard";
 
-import useBooks from "../../Hooks/useBooks";
-import BookCard from "./BookCard";
 
+const SingleCategory = () => {
 
-const AllBooks = () => {
-
-    const {books} = useBooks()    
+    const category = useLoaderData();
 
     return (
         <div>
@@ -19,7 +18,7 @@ const AllBooks = () => {
                         
                         
                        {
-                        books.map(book => <BookCard 
+                        category.map(book => <BookCard 
                             key={book._id}
                             book={book}></BookCard>)
                        }
@@ -32,4 +31,4 @@ const AllBooks = () => {
     );
 };
 
-export default AllBooks;
+export default SingleCategory;
