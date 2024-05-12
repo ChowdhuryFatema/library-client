@@ -12,8 +12,8 @@ const BookCat = ({ book }) => {
     // }
 
     return (
-        <Link to={`/books/${category}`} className="flex flex-col dark:bg-gray-50 rounded-md">
-            <div className="cat-card flex justify-center items-center py-10 border bg-[#e8e8e838] relative">
+        <Link to={`/books/${category}`} className="flex flex-col dark:bg-gray-50 rounded-md pt-40">
+            <div className="cat-card flex justify-center items-center border bg-[#e8e8e838] relative py-10">
                 <div className="overlay2">
                     <img alt="" className="object-cover h-56 dark:bg-gray-500 " src={image} />
                 </div>

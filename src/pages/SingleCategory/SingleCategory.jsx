@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import BookCard from "../AllBooks/BookCard";
+import SingleCat from "./SingleCat";
 
 
 const SingleCategory = () => {
@@ -18,9 +18,9 @@ const SingleCategory = () => {
                         
                         
                        {
-                        category.map(book => <BookCard 
+                        category.map(book => <SingleCat
                             key={book._id}
-                            book={book}></BookCard>)
+                            book={book}></SingleCat>)
                        }
 
 
