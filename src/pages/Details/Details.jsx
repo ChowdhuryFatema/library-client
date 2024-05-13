@@ -16,7 +16,6 @@ const Details = () => {
 
 
     const {
-        _id,
         image,
         name,
         description,
@@ -106,7 +105,6 @@ const Details = () => {
                                 name={name}
                                 image={image}
                                 category={category}
-                                bookId={_id}
                             ></BorrowedModal>
                         </div>
 
