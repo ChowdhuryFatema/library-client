@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import modalImg from '../../assets/images/modal.png';
 import Swal from "sweetalert2";
@@ -10,6 +10,8 @@ const BorrowedModal = ({name, image, category}) => {
 
 
     const { user } = useContext(AuthContext);
+    const [borrowed, setBorrowed] = useState([]);
+    console.log(borrowed);
     
 
     const handleBorrowedDate = e => {
@@ -38,6 +40,19 @@ const BorrowedModal = ({name, image, category}) => {
             }
         })
     }
+
+
+    const allReadyAdded = borrowed.find(borrow => borrow.name == name) || {};
+  
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/borrowedBooks')
+            .then(data => {
+
+                setBorrowed(data.data)
+            })
+
+    }, [allReadyAdded])
 
     return (
         <div>
@@ -82,7 +97,7 @@ const BorrowedModal = ({name, image, category}) => {
 
 
 
-                            <button type="submit" className="btn bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE] font-bold border-none">
+                            <button type="submit" className="btn bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE] font-bold border-none" disabled={allReadyAdded.name == name}>
                                 Submit
                             </button>
                         </form>
