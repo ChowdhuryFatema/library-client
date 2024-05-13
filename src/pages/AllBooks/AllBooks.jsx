@@ -14,6 +14,7 @@ const AllBooks = () => {
 
     const [viewList, setViewList] = useState(false);
     const [viewGrid, setViewGrid] = useState(true);
+    const [filteredBooks, setFilteredBooks] = useState(books);
 
     const handleViewList = () => {
         setViewGrid(false)
@@ -25,15 +26,32 @@ const AllBooks = () => {
         setViewGrid(true)
     }
 
+    const handleAvailableBooks = () => {
+        const availableBooks = books.filter(book => book.quantity > 0);
+
+        setFilteredBooks(availableBooks);
+    }
+
 
     return (
-        <div>
-            <div>
-                <button onClick={handleViewList} className="btn"><TfiViewListAlt /></button>
-                <button onClick={handleViewGrid} className="btn"><TfiViewGrid /></button>
-            </div>
+        <div className="max-w-7xl mx-auto px-5">
+
             <div className="py-6 sm:py-12 dark:bg-gray-100 dark:text-gray-800">
-                <div className="container p-6 mx-auto space-y-8">
+
+                <div className="flex justify-between items-center">
+
+                    <div className="rounded-full bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE]">
+                        <button onClick={handleViewList} className="btn bg-transparent tooltip tooltip-bottom" data-tip="List layout"><TfiViewListAlt className="text-white"/></button>
+                        <button onClick={handleViewGrid} className="btn bg-transparent tooltip tooltip-bottom" data-tip="Grid layout"><TfiViewGrid className="text-white"/></button>
+                    </div>
+                    <div>
+                        <button onClick={handleAvailableBooks} className="btn bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE] font-bold border-none">Show available books</button>
+                    </div>
+
+
+                </div>
+
+                <div className="space-y-8">
                     <div className="space-y-2 text-center">
                         <h2 className="text-3xl font-bold">Partem reprimique an pro</h2>
                         <p className="font-serif text-sm dark:text-gray-600">Qualisque erroribus usu at, duo te agam soluta mucius.</p>
@@ -42,43 +60,49 @@ const AllBooks = () => {
 
 
                         {viewGrid &&
-                            books.map(book => <BookCard
+                            filteredBooks.map(book => <BookCard
                                 key={book._id}
-                                book={book}></BookCard>)
+                                book={book}
+                            ></BookCard>)
                         }
                     </div>
 
 
-                    <div className="overflow-x-auto">
-                        <table className="table">
-                            {/* head */}
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <label>
-                                            <span>Edit</span>
-                                        </label>
-                                    </th>
-                                    <th>Name</th>
-                                    <th>Author</th>
-                                    <th>Review</th>
-                                    <th>Category</th>
-                                </tr>
-                            </thead>
-                            <tbody>
 
-                                {viewList &&
-                                    books.map(book => <BookList
-                                        key={book._id}
-                                        book={book}
-                                    ></BookList>)
-                                }
+                    {
+                        viewList &&
+                        <div className="overflow-x-auto">
+                            <table className="table">
+                                {/* head */}
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <label>
+                                                <span>Edit</span>
+                                            </label>
+                                        </th>
+                                        <th>Name</th>
+                                        <th>Author</th>
+                                        <th>Review</th>
+                                        <th>Category</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                            </tbody>
+                                    {
+                                        filteredBooks.map(book => <BookList
+                                            key={book._id}
+                                            book={book}
+                                        ></BookList>)
+                                    }
+
+                                </tbody>
 
 
-                        </table>
-                    </div>
+                            </table>
+                        </div>
+                    }
+
 
 
                 </div>

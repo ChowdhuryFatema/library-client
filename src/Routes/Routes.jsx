@@ -40,8 +40,10 @@ const router = createBrowserRouter([
         },
         {
           path: '/borrowedBooks',
-          element: <PrivateRoute><BorrowedBooks></BorrowedBooks></PrivateRoute>,
-          loader: () => fetch('http://localhost:5000/borrowedBooks'),
+          element: <PrivateRoute>
+            <BorrowedBooks></BorrowedBooks>
+            </PrivateRoute>,
+          loader: () => fetch('http://localhost:5000/borrowedBooks')
         },
         {
           path: '/update/:id',

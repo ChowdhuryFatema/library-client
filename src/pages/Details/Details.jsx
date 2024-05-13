@@ -90,7 +90,7 @@ const Details = () => {
                                             fullSymbol={<IoIosStar size={24} className="text-[#F2E650]" />}
                                         />
                                     </span></a>
-                                    <a rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50">Quantity : {quantity}</a>
+                                    <a rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50">Quantity : {allReadyAdded.name == name ? quantity- 1 : quantity}</a>
 
                                 </div>
                                 <div className="space-y-2">

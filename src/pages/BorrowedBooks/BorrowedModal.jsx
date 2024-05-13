@@ -27,10 +27,12 @@ const BorrowedModal = ({name, image, category}) => {
             category,
             timestamp: new Date().toLocaleDateString().split('/').join('-')
         }
-
+        
     axios.post('http://localhost:5000/borrowedBooks', date, )
         .then(data => {
             console.log(data.data);
+
+            
 
             if (data.data.insertedId) {
                 Swal.fire({
@@ -95,8 +97,6 @@ const BorrowedModal = ({name, image, category}) => {
                             </label>
 
 
-
-
                             <button type="submit" className="btn bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE] font-bold border-none" disabled={allReadyAdded.name == name}>
                                 Submit
                             </button>
@@ -114,5 +114,6 @@ BorrowedModal.propTypes = {
     name: PropTypes.object,
     image: PropTypes.object,
     category: PropTypes.object,
+    quantity: PropTypes.object,
 }
 export default BorrowedModal;
