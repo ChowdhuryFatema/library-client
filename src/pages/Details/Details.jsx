@@ -13,10 +13,10 @@ const Details = () => {
 
     const book = useLoaderData()
     const [borrowed, setBorrowed] = useState([]);
-    console.log(borrowed);
 
 
     const {
+        _id,
         image,
         name,
         description,
@@ -28,7 +28,7 @@ const Details = () => {
     } = book;
 
     const allReadyAdded = borrowed.find(borrow => borrow.name == name) || {};
-  
+
 
     useEffect(() => {
         axios.get('http://localhost:5000/borrowedBooks')
@@ -37,12 +37,12 @@ const Details = () => {
                 setBorrowed(data.data)
             })
 
-    }, [allReadyAdded])
-
-    
+    }, [borrowed])
 
 
-   
+
+
+
     return (
         <div className="max-w-7xl mx-auto px-5">
             <div className="dark:bg-gray-100 dark:text-gray-900">
@@ -90,7 +90,7 @@ const Details = () => {
                                             fullSymbol={<IoIosStar size={24} className="text-[#F2E650]" />}
                                         />
                                     </span></a>
-                                    <a rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50">Quantity : {allReadyAdded.name == name ? quantity- 1 : quantity}</a>
+                                    <a rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50">Quantity : { allReadyAdded.name == name ? quantity -1 : quantity}</a>
 
                                 </div>
                                 <div className="space-y-2">
@@ -109,6 +109,7 @@ const Details = () => {
                                 name={name}
                                 image={image}
                                 category={category}
+                                bookId={_id}
                             ></BorrowedModal>
                         </div>
 

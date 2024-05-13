@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import modalImg from '../../assets/images/modal.png';
@@ -6,12 +7,11 @@ import axios from "axios";
 import PropTypes from 'prop-types';
 
 
-const BorrowedModal = ({name, image, category}) => {
+const BorrowedModal = ({name, image, category, bookId}) => {
 
 
     const { user } = useContext(AuthContext);
     const [borrowed, setBorrowed] = useState([]);
-    console.log(borrowed);
     
 
     const handleBorrowedDate = e => {
@@ -25,14 +25,13 @@ const BorrowedModal = ({name, image, category}) => {
             name, 
             image, 
             category,
+            bookId,
             timestamp: new Date().toLocaleDateString().split('/').join('-')
         }
         
     axios.post('http://localhost:5000/borrowedBooks', date, )
         .then(data => {
             console.log(data.data);
-
-            
 
             if (data.data.insertedId) {
                 Swal.fire({
@@ -48,13 +47,13 @@ const BorrowedModal = ({name, image, category}) => {
   
 
     useEffect(() => {
-        axios.get('http://localhost:5000/borrowedBooks')
+        axios.get(`http://localhost:5000/borrowedBooks`)
             .then(data => {
 
                 setBorrowed(data.data)
             })
 
-    }, [allReadyAdded])
+    }, [borrowed])
 
     return (
         <div>
@@ -111,9 +110,10 @@ const BorrowedModal = ({name, image, category}) => {
 
 
 BorrowedModal.propTypes = {
-    name: PropTypes.object,
-    image: PropTypes.object,
-    category: PropTypes.object,
-    quantity: PropTypes.object,
+    name: PropTypes.string,
+    image: PropTypes.string,
+    category: PropTypes.string,
+    quantity: PropTypes.string,
+    bookId: PropTypes.string,
 }
 export default BorrowedModal;

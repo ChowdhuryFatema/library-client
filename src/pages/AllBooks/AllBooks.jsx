@@ -38,24 +38,26 @@ const AllBooks = () => {
 
             <div className="py-6 sm:py-12 dark:bg-gray-100 dark:text-gray-800">
 
-                <div className="flex justify-between items-center">
+                
+                <div className="space-y-8">
+                    <div className="space-y-2 text-center">
+                        <h2 className="text-5xl font-bold">All Books</h2>
+                        <p className="font-serif text-sm dark:text-gray-600">Qualisque erroribus usu at, duo te agam soluta mucius.</p>
+                    </div>
 
+                    <div className="flex justify-between items-center">
+                    
+                    <div>
+                        <button onClick={handleAvailableBooks} className="btn bg-gradient-to-r bg-transparent logo font-bold">Show available books</button>
+                    </div>
                     <div className="rounded-full bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE]">
                         <button onClick={handleViewList} className="btn bg-transparent tooltip tooltip-bottom" data-tip="List layout"><TfiViewListAlt className="text-white"/></button>
                         <button onClick={handleViewGrid} className="btn bg-transparent tooltip tooltip-bottom" data-tip="Grid layout"><TfiViewGrid className="text-white"/></button>
-                    </div>
-                    <div>
-                        <button onClick={handleAvailableBooks} className="btn bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE] font-bold border-none">Show available books</button>
                     </div>
 
 
                 </div>
 
-                <div className="space-y-8">
-                    <div className="space-y-2 text-center">
-                        <h2 className="text-3xl font-bold">Partem reprimique an pro</h2>
-                        <p className="font-serif text-sm dark:text-gray-600">Qualisque erroribus usu at, duo te agam soluta mucius.</p>
-                    </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-14">
 
 

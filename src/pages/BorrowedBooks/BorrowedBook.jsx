@@ -13,8 +13,8 @@ const BorrowedBook = ({ borrowedBook, setData, data }) => {
     } = borrowedBook;
 
 
+
     const handleReturn = id => {
-        console.log(id);
 
         axios.delete(`http://localhost:5000/borrowedBooks/${_id}`)
         .then(data => {
