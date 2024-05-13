@@ -2,8 +2,12 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 import 'react-toastify/dist/ReactToastify.css';
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const AddBook = () => {
+
+    const {user} = useContext(AuthContext);
 
     const handleAddBook = e => {
         e.preventDefault();
@@ -16,6 +20,7 @@ const AddBook = () => {
         const rating = form.rating.value;
         const contents = form.contents.value;
         const quantity = form.quantity.value;
+        const email = user.email;
 
 
         const newBook = {
@@ -26,7 +31,8 @@ const AddBook = () => {
             category,
             rating,
             contents,
-            quantity
+            quantity,
+            email
         }
         console.log(newBook)
 

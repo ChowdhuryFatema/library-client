@@ -10,6 +10,7 @@ import AllBooks from "../pages/AllBooks/AllBooks";
 import Update from "../pages/Update/Update";
 import SingleCategory from "../pages/SingleCategory/SingleCategory";
 import Details from "../pages/Details/Details";
+import BorrowedBooks from "../pages/BorrowedBooks/BorrowedBooks";
 
 const router = createBrowserRouter([
     {
@@ -36,6 +37,11 @@ const router = createBrowserRouter([
         {
           path: '/allBook',
           element: <PrivateRoute><AllBooks></AllBooks></PrivateRoute>,
+        },
+        {
+          path: '/borrowedBooks',
+          element: <PrivateRoute><BorrowedBooks></BorrowedBooks></PrivateRoute>,
+          loader: () => fetch('http://localhost:5000/borrowedBooks'),
         },
         {
           path: '/update/:id',

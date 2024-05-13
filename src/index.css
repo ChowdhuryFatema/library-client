@@ -91,3 +91,7 @@ h2, h3, h4 {
     display: block;
     transition: .5s;
 }
+
+.modal-box {
+    max-width: 60% !important;
+}

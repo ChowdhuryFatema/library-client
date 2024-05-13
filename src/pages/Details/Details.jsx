@@ -1,4 +1,9 @@
 import { useLoaderData } from "react-router-dom";
+import { IoIosStarOutline } from "react-icons/io";
+import { IoIosStar } from "react-icons/io";
+import Rating from "react-rating";
+import BorrowedModal from "../BorrowedBooks/BorrowedModal";
+// import axios from "axios";
 
 
 const Details = () => {
@@ -16,6 +21,7 @@ const Details = () => {
         quantity
     } = book;
 
+ 
 
     return (
         <div className="max-w-7xl mx-auto px-5">
@@ -36,7 +42,18 @@ const Details = () => {
                                             <img src="https://source.unsplash.com/75x75/?portrait" alt="" className="w-4 h-4 border rounded-full dark:bg-gray-500 dark:border-gray-300" />
                                             <p className="text-sm">{author}</p>
                                         </div>
-                                        <p className="flex-shrink-0 mt-3 text-sm md:mt-0">4 min read • 1,570 views</p>
+
+
+                                        <div className="flex flex-wrap justify-between pt-5 space-x-2 text-xs dark:text-gray-600">
+
+
+                                            <span className={`font-semibold btn btn-sm 
+                        ${category === 'Novel' && 'bg-red-100 text-red-500'}
+                        ${category === 'Drama' && 'bg-green-100 text-green-500'}
+                        ${category === 'Thriller' && 'bg-blue-100 text-blue-500'}
+                        ${category === 'History' && 'bg-yellow-100 text-yellow-500'}
+                        `}>{category}</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="dark:text-gray-800">
@@ -45,25 +62,34 @@ const Details = () => {
                             </article>
                             <div>
                                 <div className="flex flex-wrap py-6 gap-2 border-t border-dashed dark:border-gray-600">
-                                    <a rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50">#MambaUI</a>
-                                    <a rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50">#TailwindCSS</a>
-                                    <a rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50">#Angular</a>
+                                    <a rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50"> <span>
+                                        <Rating
+                                            initialRating={rating}
+                                            readonly
+                                            emptySymbol={<IoIosStarOutline size={24} className="text-[#C9CAC9]" />}
+                                            fullSymbol={<IoIosStar size={24} className="text-[#F2E650]" />}
+                                        />
+                                    </span></a>
+                                    <a rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50">Quantity : {quantity}</a>
+
                                 </div>
                                 <div className="space-y-2">
-                                    <h4 className="text-lg font-semibold">Related posts</h4>
-                                    <ul className="ml-4 space-y-1 list-disc">
-                                        <li>
-                                            <a rel="noopener noreferrer" href="#" className="hover:underline">Nunc id magna mollis</a>
-                                        </li>
-                                        <li>
-                                            <a rel="noopener noreferrer" href="#" className="hover:underline">Duis molestie, neque eget pretium lobortis</a>
-                                        </li>
-                                        <li>
-                                            <a rel="noopener noreferrer" href="#" className="hover:underline">Mauris nec urna volutpat, aliquam lectus sit amet</a>
-                                        </li>
-                                    </ul>
+                                    <p>{contents}</p>
                                 </div>
                             </div>
+
+
+                            <button onClick={() => {
+                                document.getElementById('my_modal_3').showModal()
+                            }} className="btn bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE] font-bold text-lg border-none">
+                                Borrow
+                            </button>
+
+                            <BorrowedModal 
+                            name={name} 
+                            image={image} 
+                            category={category}
+                            ></BorrowedModal>
                         </div>
 
                     </div>

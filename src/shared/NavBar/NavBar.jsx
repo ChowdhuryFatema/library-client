@@ -14,7 +14,7 @@ const NavBar = () => {
         <NavLink className="md:text-lg py-2 px-3 font-semibold" to="/">Home</NavLink>
         <NavLink className="md:text-lg py-2 px-3 font-semibold" to="/addBook">Add Book</NavLink>
         <NavLink className="md:text-lg py-2 px-3 font-semibold" to="/allBook">All Books</NavLink>
-        <NavLink className="md:text-lg py-2 px-3 font-semibold" to="/borrowedBook">Borrowed Books</NavLink>
+        <NavLink className="md:text-lg py-2 px-3 font-semibold" to="/borrowedBooks">Borrowed Books</NavLink>
         
             {
                 !user &&
