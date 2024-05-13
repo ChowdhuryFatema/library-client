@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 
 const BorrowedBook = ({ borrowedBook, setData, data }) => {
 
-    console.log(borrowedBook);
-
     const {
         _id,
         image,

@@ -12,10 +12,11 @@ const BorrowedModal = ({name, image, category}) => {
     const { user } = useContext(AuthContext);
     
 
-    const handleDate = e => {
+    const handleBorrowedDate = e => {
         e.preventDefault();
         const form = e.target;
         const return_date = form.return_date.value;
+
 
         const date = {
             return_date,
@@ -57,7 +58,7 @@ const BorrowedModal = ({name, image, category}) => {
                         <div>
                             <img className="w-full" src={modalImg} alt="" />
                         </div>
-                        <form onSubmit={handleDate} className="space-y-5">
+                        <form onSubmit={handleBorrowedDate} className="space-y-5">
 
 
                             <label>

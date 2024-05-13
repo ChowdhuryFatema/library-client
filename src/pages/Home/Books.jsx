@@ -1,10 +1,26 @@
-import useBooks from "../../Hooks/useBooks";
+import { useContext, useEffect, useState } from "react";
+// import useBooks from "../../Hooks/useBooks";
 import BookCat from "./BookCat";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import axios from "axios";
 
 
 const Books = () => {
 
-    const { books } = useBooks();
+    const { user } = useContext(AuthContext);
+    const [books, setBooks] = useState([]);
+
+    const url = `http://localhost:5000/books?email=${user?.email}`;
+    useEffect(() => {
+
+        axios.get(url, {withCredentials: true})
+        .then(res => {
+            setBooks(res.data);
+        })
+        // fetch(url)
+        //     .then(res => res.json())
+        //     .then(data => setBookings(data))
+    }, [url]);
 
     return (
         <div className="max-w-7xl mx-auto px-5 my-20">

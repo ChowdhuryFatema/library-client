@@ -36,7 +36,7 @@ const AddBook = () => {
         }
         console.log(newBook)
 
-        axios.post(import.meta.env.VITE_API_URL, newBook)
+        axios.post(import.meta.env.VITE_API_URL, newBook , {withCredentials: true})
             .then(data => {
                 console.log(data.data);
 

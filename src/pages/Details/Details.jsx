@@ -1,14 +1,20 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useLoaderData } from "react-router-dom";
 import { IoIosStarOutline } from "react-icons/io";
 import { IoIosStar } from "react-icons/io";
 import Rating from "react-rating";
 import BorrowedModal from "../BorrowedBooks/BorrowedModal";
+import { useEffect, useState } from "react";
+import axios from "axios";
 // import axios from "axios";
 
 
 const Details = () => {
 
     const book = useLoaderData()
+    const [borrowed, setBorrowed] = useState([]);
+    console.log(borrowed);
+
 
     const {
         image,
@@ -21,8 +27,22 @@ const Details = () => {
         quantity
     } = book;
 
- 
+    const allReadyAdded = borrowed.find(borrow => borrow.name == name) || {};
+  
 
+    useEffect(() => {
+        axios.get('http://localhost:5000/borrowedBooks')
+            .then(data => {
+
+                setBorrowed(data.data)
+            })
+
+    }, [allReadyAdded])
+
+    
+
+
+   
     return (
         <div className="max-w-7xl mx-auto px-5">
             <div className="dark:bg-gray-100 dark:text-gray-900">
@@ -81,14 +101,14 @@ const Details = () => {
 
                             <button onClick={() => {
                                 document.getElementById('my_modal_3').showModal()
-                            }} className="btn bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE] font-bold text-lg border-none">
+                            }} className="btn bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE] font-bold text-lg border-none" disabled={allReadyAdded.name == name}>
                                 Borrow
                             </button>
 
-                            <BorrowedModal 
-                            name={name} 
-                            image={image} 
-                            category={category}
+                            <BorrowedModal
+                                name={name}
+                                image={image}
+                                category={category}
                             ></BorrowedModal>
                         </div>
 
