@@ -58,50 +58,33 @@ const BorrowedModal = ({name, image, category, rating}) => {
     return (
         <div>
             {/* You can open the modal using document.getElementById('ID').showModal() method */}
-
             <dialog id="my_modal_3" className="modal">
-                <div className="modal-box max-w-[70%]">
-                    <form method="dialog">
-                        {/* if there is a button in form, it will close the modal */}
-                        <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                    </form>
+                <div className="modal-box">
 
-
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 p-10 gap-5">
-
-
+                    
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-5 lg:p-10 gap-5">
                         <div>
-                            <img className="w-full" src={modalImg} alt="" />
+                            <img className="p-5 lg:p-0 w-full" src={modalImg} alt="" />
                         </div>
                         <form onSubmit={handleBorrowedDate} className="space-y-5">
-
-
                             <label>
                                 <p className="py-3">Name</p>
-
                                 <input className="border py-1 px-2 rounded w-full" type="text" value={user.displayName} disabled />
                             </label>
-
                             <label>
                                 <p className="py-3">Email</p>
                                 <input className="border py-1 px-2 rounded w-full" type="email" value={user.email} disabled />
-                            </label>
-
-                           
+                            </label>                       
                             <label>
                                 <p className="py-3">Return Date</p>
-
                                 <input className="border py-1 px-2 rounded w-full" name="return_date" type="date" placeholder="Return Date" />
                             </label>
-
-
-                            <button type="submit" className="btn bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE] font-bold border-none" disabled={allReadyAdded.name == name}>
+                            <button onClick={()=>document.getElementById('my_modal_3').close()} type="submit" className="btn bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE] font-bold border-none" disabled={allReadyAdded.name == name}>
                                 Submit
                             </button>
                         </form>
                     </div>
-
                 </div>
             </dialog>
         </div>

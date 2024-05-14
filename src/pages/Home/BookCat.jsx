@@ -27,12 +27,10 @@ const BookCat = ({ book }) => {
                         ${category === 'Thriller' && 'bg-blue-100 text-blue-500'}
                         ${category === 'History' && 'bg-yellow-100 text-yellow-500'}
                     `}>
-
                     <p className="-rotate-45">
                         <span className="font-semibold">{category}</span>
 
                     </p>
-
                 </div>
             </div>
         </Link>

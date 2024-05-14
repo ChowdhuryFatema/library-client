@@ -77,7 +77,7 @@ h2, h3, h4 {
     transition: .5s;
 }
 
-
+/* footer  */
 
 .footer-bg {
     background-image: url('./assets/images/footer-bg.jpg');
@@ -94,9 +94,9 @@ h2, h3, h4 {
     transition: .5s;
 }
 
-.modal-box {
-    max-width: 60% !important;
-}
+
+
+/* heading  */
 
 .heading::before {
     content: '';
@@ -108,17 +108,6 @@ h2, h3, h4 {
     width: 50px;
     height: 2px;
 }
-.heading::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 100px;
-    background-color: #C03EE2;
-    opacity: 100%;
-    width: 50px;
-    height: 2px;
-}
-
 
 
 /* button css */
@@ -233,3 +222,23 @@ h2, h3, h4 {
 }
 
 /* details page end  */
+
+.modal-box {
+    max-width: 60% !important;
+}
+
+@media screen and (max-width: 1000px) {
+    .modal-box {
+        max-width: 70% !important;
+    }
+}
+@media screen and (max-width: 800px) {
+    .modal-box {
+        max-width: 80% !important;
+    }
+}
+@media screen and (max-width: 700px) {
+    .modal-box {
+        max-width: 100% !important;
+    }
+}

@@ -39,18 +39,19 @@ const AllBooks = () => {
                 
                 <div className="space-y-8">
                     <div className="space-y-2 text-center">
-                        <h2 className="text-5xl font-bold">All Books</h2>
-                        <p className="font-serif text-sm dark:text-gray-600">Qualisque erroribus usu at, duo te agam soluta mucius.</p>
+                        <h2 className="text-4xl md:text-5xl font-bold logo">All Books</h2>
+                        
+                        <p className="font-serif text-sm dark:text-gray-600">The library, where every book holds a universe of discovery.</p>
                     </div>
 
                     <div className="flex justify-between items-center">
                     
                     <div>
-                        <button onClick={handleAvailableBooks} className="btn bg-gradient-to-r bg-transparent logo font-bold">Show available books</button>
+                        <button onClick={handleAvailableBooks} className="btn bg-gradient-to-r bg-transparent logo font-bold border border-[#d64adf]">Show available books</button>
                     </div>
                     <div className="rounded-full bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE]">
-                        <button onClick={handleViewList} className="btn bg-transparent tooltip tooltip-bottom" data-tip="List layout"><TfiViewListAlt className="text-white"/></button>
-                        <button onClick={handleViewGrid} className="btn bg-transparent tooltip tooltip-bottom" data-tip="Grid layout"><TfiViewGrid className="text-white"/></button>
+                        <button onClick={handleViewList} className="btn bg-transparent tooltip tooltip-bottom hover:bg-[#D64ADF]" data-tip="List layout"><TfiViewListAlt className="text-white"/></button>
+                        <button onClick={handleViewGrid} className="btn bg-transparent tooltip tooltip-left hover:bg-[#D64ADF]" data-tip="Grid layout"><TfiViewGrid className="text-white"/></button>
                     </div>
 
                 </div>

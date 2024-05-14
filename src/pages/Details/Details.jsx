@@ -40,34 +40,35 @@ const Details = () => {
 
 
     return (
-        <div>
+        <div className="mb-10">
             <div className="details-overlay relative z-20">
-                <img className="w-full h-72 object-cover" src={detailsImg} alt="" />
-                <div className="absolute top-2/4 left-2/4 -translate-x-[50%] -translate-y-[50%] z-50">
-                    <h2 className="logo text-6xl font-bold">Book Details</h2>
+                <img className="md:w-full h-40 md:h-72 object-cover" src={detailsImg} alt="" />
+                <div className="absolute top-2/4 left-2/4 -translate-x-[50%] -translate-y-[50%] z-50 w-full">
+                    <h2 className="logo text-5xl lg:text-6xl font-bold text-center">Book Details</h2>
                 </div>
             </div>
             <div className="max-w-7xl mx-auto px-5">
                 <div className="dark:bg-gray-100 dark:text-gray-900">
                     <div className="container grid grid-cols-12 mx-auto dark:bg-gray-50">
                         <div className="dark:bg-gray-300 col-span-full lg:col-span-4">
-                            <img className="py-20 w-full" src={image} alt="" />
+                            <img className="md:py-20 md:w-full" src={image} alt="" />
                         </div>
                         <div className="flex flex-col p-6 col-span-full row-span-full lg:col-span-8 lg:p-10">
 
 
-                            <div className="max-w-2xl px-6 py-16 space-y-12">
+                            <div className="w-full md:max-w-2xl md:px-6 py-5 md:py-16 space-y-5">
                                 <article className="space-y-8 dark:bg-gray-100 dark:text-gray-900">
                                     <div className="space-y-6">
-                                        <h1 className="text-4xl font-bold md:tracking-tight md:text-5xl">{name}</h1>
-                                        <div className="flex flex-col items-start justify-between w-full md:flex-row md:items-center dark:text-gray-600">
+                                        <h1 className="text-3xl md:text-4xl font-bold md:tracking-tight lg:text-5xl">{name}</h1>
+                                        <div className="flex items-start justify-between w-full md:items-center dark:text-gray-600">
                                             <div className="flex items-center md:space-x-2">
                                                 <img src="https://source.unsplash.com/75x75/?portrait" alt="" className="w-4 h-4 border rounded-full dark:bg-gray-500 dark:border-gray-300" />
+
                                                 <p className="text-sm">{author}</p>
                                             </div>
 
 
-                                            <div className="flex flex-wrap justify-between pt-5 space-x-2 text-xs dark:text-gray-600">
+                                            <div className="flex flex-wrap justify-between md:pt-5 space-x-2 text-xs dark:text-gray-600">
 
 
                                                 <span className={`font-semibold btn btn-sm 
@@ -104,7 +105,7 @@ const Details = () => {
 
                                 <button onClick={() => {
                                     document.getElementById('my_modal_3').showModal()
-                                }} className="btn bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE] font-bold text-lg border-none" disabled={allReadyAdded.name == name}>
+                                }} className="btn bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE] font-bold text-lg border-none" disabled={allReadyAdded.name == name || quantity <= 0}>
                                     Borrow
                                 </button>
 

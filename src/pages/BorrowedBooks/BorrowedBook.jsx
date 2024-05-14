@@ -32,7 +32,7 @@ const BorrowedBook = ({ borrowedBook, setData, data }) => {
     return (
         <div className="grid grid-cols-3 items-center dark:bg-gray-50 rounded-md shadow-md gap-3">
             <div className="flex col-span-1 justify-center items-center border bg-[#e8e8e838] relative h-full">
-                <img alt="" className="object-cover w-48 h-48 p-5 dark:bg-gray-500 scale-110 hover:scale-125 duration-500" src={image} />
+                <img alt="" className="object-cover w-48 h-36 md:h-40 p-5 dark:bg-gray-500 scale-110 hover:scale-125 duration-500" src={image} />
                 <div className={`category absolute top-0 left-0 w-24 h-24 text-sm
                         ${category === 'Novel' && 'bg-red-100 text-red-500'}
                         ${category === 'Drama' && 'bg-green-100 text-green-500'}
@@ -48,9 +48,9 @@ const BorrowedBook = ({ borrowedBook, setData, data }) => {
                 </div>
             </div>
             <div className="flex col-span-2 flex-col flex-1 space-y-3 pt-1">
-                <h1 className="text-2xl font-semibold leading-snug">{name}</h1>
-                <p className='text-sm'>Borrowed Date:  {timestamp}</p>
-                <p className='text-sm'>Return Date: {return_date}</p>
+                <h1 className="text-xl md:text-2xl font-semibold leading-snug">{name}</h1>
+                <p className='text-sm'><span className='font-semibold'>Borrowed Date:</span>  {timestamp}</p>
+                <p className='text-sm'><span className='font-semibold'>Return Date:</span> {return_date}</p>
                 <span>
                         <Rating
                             initialRating={rating}
