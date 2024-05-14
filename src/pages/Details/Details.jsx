@@ -44,7 +44,7 @@ const Details = () => {
             <div className="dark:bg-gray-100 dark:text-gray-900">
                 <div className="container grid grid-cols-12 mx-auto dark:bg-gray-50">
                     <div className="dark:bg-gray-300 col-span-full lg:col-span-4">
-                        <img className="py-20" src={image} alt="" />
+                        <img className="py-20 w-full" src={image} alt="" />
                     </div>
                     <div className="flex flex-col p-6 col-span-full row-span-full lg:col-span-8 lg:p-10">
 
