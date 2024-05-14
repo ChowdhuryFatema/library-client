@@ -53,7 +53,7 @@ const Update = () => {
     return (
         <div className="add-book min-h-[calc(100vh-80px)] relative">
             <div className="overlay1">
-                <div className="max-w-5xl mx-auto px-5 py-16 relative z-50">
+                <div className="max-w-5xl mx-auto px-5 py-16 relative z-20">
                     <div className="mb-8">
                         <h2 className="text-red text-3xl md:text-5xl text-red font-semibold text-center text-white">Update</h2>
                     </div>

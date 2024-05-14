@@ -16,7 +16,7 @@ const BookCard = ({ book }) => {
 
             <div className="flex justify-center items-center py-10 border bg-[#e8e8e838]">
                 
-                    <img alt="" className="object-cover w-40 h-52 dark:bg-gray-500" src={image} />
+                    <img alt="" className="object-cover w-40 h-52 dark:bg-gray-500 my-5 scale-110 hover:scale-125 duration-500" src={image} />
                 
             </div>
 

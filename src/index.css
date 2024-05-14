@@ -77,6 +77,8 @@ h2, h3, h4 {
     transition: .5s;
 }
 
+
+
 .footer-bg {
     background-image: url('./assets/images/footer-bg.jpg');
     background-size: cover;
@@ -116,14 +118,6 @@ h2, h3, h4 {
     width: 50px;
     height: 2px;
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -222,3 +216,20 @@ h2, h3, h4 {
         font-size: 14px;
     }
 }
+
+/* btn end  */
+
+/* details page  */
+
+.details-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    opacity: 30%;
+    width: 100%;
+    height: 100%;
+}
+
+/* details page end  */

@@ -7,7 +7,7 @@ import axios from "axios";
 import PropTypes from 'prop-types';
 
 
-const BorrowedModal = ({name, image, category}) => {
+const BorrowedModal = ({name, image, category, rating}) => {
 
 
     const { user } = useContext(AuthContext);
@@ -25,6 +25,7 @@ const BorrowedModal = ({name, image, category}) => {
             name, 
             image, 
             category,
+            rating,
             timestamp: new Date().toLocaleDateString().split('/').join('-')
         }
         
@@ -114,5 +115,6 @@ BorrowedModal.propTypes = {
     category: PropTypes.string,
     quantity: PropTypes.string,
     bookId: PropTypes.string,
+    rating: PropTypes.string,
 }
 export default BorrowedModal;

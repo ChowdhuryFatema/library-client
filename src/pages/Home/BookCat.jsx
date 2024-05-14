@@ -13,9 +13,9 @@ const BookCat = ({ book }) => {
 
     return (
         <Link to={`/books/${category}`} className="flex flex-col dark:bg-gray-50 rounded-md">
-            <div className="cat-card flex justify-center items-center border bg-[#e8e8e838] relative">
+            <div className="cat-card flex justify-center items-center border bg-[#e8e8e886] relative">
                 <div className="overlay2 py-10">
-                    <img alt="" className="object-cover w-44 h-64   dark:bg-gray-500 " src={image} />
+                    <img alt="" className="object-cover w-44 h-64  dark:bg-gray-500 " src={image} />
                 </div>
                 <div className="absolute search duration-500 hidden top-2/4 left-2/4 -translate-x-[50%] -translate-y-[50%]">
                     <IoSearch size={40} className="text-white" />
