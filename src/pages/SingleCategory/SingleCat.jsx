@@ -11,7 +11,7 @@ const SingleCat = ({ book }) => {
     return (
         <div className="flex flex-col dark:bg-gray-50 rounded-md">
             <div className="flex justify-center items-center py-10 border bg-[#e8e8e838]">
-                <img alt="" className="object-cover w-28 dark:bg-gray-500" src={image} />
+                <img alt="" className="object-cover w-40 h-52  dark:bg-gray-500" src={image} />
             </div>
             <div className="flex flex-col flex-1 p-6 shadow-md">
                 <div className="flex justify-between">

@@ -13,24 +13,22 @@ const Books = () => {
 
     const [books, setBooks] = useState([]);
 
-    const url = `https://library-server-teal.vercel.app/books?email=${user?.email}`;
+    
     useEffect(() => {
 
-        axios.get(url, {withCredentials: true})
+        axios.get('https://library-server-teal.vercel.app/booksCat')
         .then(res => {
             setBooks(res.data);
         })
 
 
-        // fetch(url)
-        //     .then(res => res.json())
-        //     .then(data => setBookings(data))
-
-
-    }, [url]);
+    }, []);
 
     return (
-        <div className="max-w-7xl mx-auto px-5 my-20">
+        <div className="max-w-7xl mx-auto px-5">
+            <div className="py-8 md:py-14">
+                <h2 className="text-5xl font-bold heading relative ml-16 logo">Books</h2>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
 
 
