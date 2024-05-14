@@ -33,12 +33,9 @@ const AllBooks = () => {
         setFilteredBooks(availableBooks);
     }
 
-
     return (
         <div className="max-w-7xl mx-auto px-5">
-
             <div className="py-6 sm:py-12 dark:bg-gray-100 dark:text-gray-800">
-
                 
                 <div className="space-y-8">
                     <div className="space-y-2 text-center">
@@ -56,21 +53,28 @@ const AllBooks = () => {
                         <button onClick={handleViewGrid} className="btn bg-transparent tooltip tooltip-bottom" data-tip="Grid layout"><TfiViewGrid className="text-white"/></button>
                     </div>
 
-
                 </div>
-
+                {viewGrid &&
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-14">
 
-
-                        {viewGrid &&
+                            {
+                                filteredBooks.length > 0 ? 
+                            
+                            filteredBooks.map(book => <BookCard
+                                key={book._id}
+                                book={book}
+                            ></BookCard>)
+                            
+                            :
+                        
                             books.map(book => <BookCard
                                 key={book._id}
                                 book={book}
                             ></BookCard>)
-                        }
+                            }
+                        
                     </div>
-
-
+                        }
 
                     {
                         viewList &&
@@ -112,8 +116,6 @@ const AllBooks = () => {
                             </table>
                         </div>
                     }
-
-
 
                 </div>
             </div>
