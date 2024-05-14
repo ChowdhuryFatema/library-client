@@ -11,10 +11,11 @@ const AllBooks = () => {
 
     const { books } = useBooks();
 
+    console.log(books);
 
     const [viewList, setViewList] = useState(false);
     const [viewGrid, setViewGrid] = useState(true);
-    const [filteredBooks, setFilteredBooks] = useState(books);
+    const [filteredBooks, setFilteredBooks] = useState([]);
 
     const handleViewList = () => {
         setViewGrid(false)
@@ -62,7 +63,7 @@ const AllBooks = () => {
 
 
                         {viewGrid &&
-                            filteredBooks.map(book => <BookCard
+                            books.map(book => <BookCard
                                 key={book._id}
                                 book={book}
                             ></BookCard>)
@@ -91,8 +92,15 @@ const AllBooks = () => {
                                 </thead>
                                 <tbody>
 
-                                    {
-                                        filteredBooks.map(book => <BookList
+                                    { filteredBooks.length > 0 ? 
+                                    
+                                    filteredBooks.map(book => <BookList
+                                        key={book._id}
+                                        book={book}
+                                    ></BookList>)
+
+                                    :
+                                        books.map(book => <BookList
                                             key={book._id}
                                             book={book}
                                         ></BookList>)

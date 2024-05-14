@@ -7,19 +7,26 @@ import axios from "axios";
 
 const Books = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user = {} } = useContext(AuthContext);
+
+    console.log(user);
+
     const [books, setBooks] = useState([]);
 
-    const url = `http://localhost:5000/books?email=${user?.email}`;
+    const url = `https://library-server-teal.vercel.app/books?email=${user?.email}`;
     useEffect(() => {
 
         axios.get(url, {withCredentials: true})
         .then(res => {
             setBooks(res.data);
         })
+
+
         // fetch(url)
         //     .then(res => res.json())
         //     .then(data => setBookings(data))
+
+
     }, [url]);
 
     return (

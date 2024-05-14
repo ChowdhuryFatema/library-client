@@ -43,22 +43,22 @@ const router = createBrowserRouter([
           element: <PrivateRoute>
             <BorrowedBooks></BorrowedBooks>
             </PrivateRoute>,
-          loader: () => fetch('http://localhost:5000/borrowedBooks')
+          loader: () => fetch('https://library-server-teal.vercel.app/borrowedBooks')
         },
         {
           path: '/update/:id',
           element: <PrivateRoute><Update></Update></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/books/${params.id}`)
+          loader: ({params}) => fetch(`https://library-server-teal.vercel.app/books/${params.id}`)
         },
         {
           path: '/details/:id',
           element: <PrivateRoute><Details></Details></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/books/${params.id}`)
+          loader: ({params}) => fetch(`https://library-server-teal.vercel.app/books/${params.id}`)
         },
         {
           path: '/books/:category',
           element: <PrivateRoute><SingleCategory></SingleCategory></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/book/${params.category}`)
+          loader: ({params}) =>  fetch(`https://library-server-teal.vercel.app/book/${params.category}`)
         },
   
       ],

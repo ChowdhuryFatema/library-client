@@ -30,7 +30,7 @@ const Details = () => {
 
 
     useEffect(() => {
-        axios.get('http://localhost:5000/borrowedBooks')
+        axios.get('https://library-server-teal.vercel.app/borrowedBooks')
             .then(data => {
 
                 setBorrowed(data.data)

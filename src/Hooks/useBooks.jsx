@@ -6,14 +6,17 @@ const useBooks = () => {
 
     const {user} = useContext(AuthContext)
 
-    console.log(user);
-        const {data:books=[], isLoading, refetch} = useQuery({
+
+        const {data:books = [], isLoading, refetch} = useQuery({
         
-            queryKey: ["books"],
+            queryKey: ["books", user?.email],
+            enabled: !! user?.email,
             queryFn: async () => {
-                const res = await fetch(`http://localhost:5000/books?email=${user?.email}`, {credentials: 'include'});
+                const res = await fetch(`https://library-server-teal.vercel.app/books?email=${user?.email}`, {credentials: 'include'});
                 const data = await res.json();
                 return data;
+
+
             }
         })
     

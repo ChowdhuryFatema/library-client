@@ -35,7 +35,7 @@ const Update = () => {
         }
         console.log(updatedBook)
 
-        axios.put(`http://localhost:5000/books/${_id}`, updatedBook)
+        axios.put(`https://library-server-teal.vercel.app/books/${_id}`, updatedBook)
         .then(data => {
             console.log(data.data);
 

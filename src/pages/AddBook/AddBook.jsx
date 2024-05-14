@@ -53,7 +53,7 @@ const AddBook = () => {
     return (
         <div className="add-book min-h-[calc(100vh-80px)] relative">
             <div className="overlay1">
-                <div className="max-w-5xl mx-auto px-5 py-16 relative z-50">
+                <div className="max-w-5xl mx-auto px-5 py-16 relative z-30">
                     <div className="mb-8">
                         <h2 className="text-red text-3xl md:text-5xl text-red font-semibold text-center text-white">Add Books</h2>
                     </div>
@@ -126,17 +126,10 @@ const AddBook = () => {
                                 <p className="text-white text-lg">Contents</p>
                                 <input type="text" name="contents" placeholder="Write some contents about the book" className="border py-3 px-2 outline-none w-full bg-transparent text-white rounded-md" />
                             </div>
-
-
-
                         </div>
-
-
                         <div className="pt-5">
                             <button className="btn bg-gradient-to-r from-[#E855DE] text-white border-none to-[#5400EE] font-bold text-lg">Add Book</button>
                         </div>
-
-
 
                     </form>
                 </div>

@@ -16,7 +16,7 @@ const BorrowedBook = ({ borrowedBook, setData, data }) => {
 
     const handleReturn = id => {
 
-        axios.delete(`http://localhost:5000/borrowedBooks/${_id}`)
+        axios.delete(`https://library-server-teal.vercel.app/borrowedBooks/${_id}`)
         .then(data => {
             console.log(data.data);
         })

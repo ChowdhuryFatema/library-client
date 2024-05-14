@@ -28,7 +28,7 @@ const BorrowedModal = ({name, image, category}) => {
             timestamp: new Date().toLocaleDateString().split('/').join('-')
         }
         
-    axios.post('http://localhost:5000/borrowedBooks', date, )
+    axios.post('https://library-server-teal.vercel.app/borrowedBooks', date, )
         .then(data => {
             console.log(data.data);
 
@@ -46,7 +46,7 @@ const BorrowedModal = ({name, image, category}) => {
   
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/borrowedBooks`)
+        axios.get(`https://library-server-teal.vercel.app/borrowedBooks`)
             .then(data => {
 
                 setBorrowed(data.data)
