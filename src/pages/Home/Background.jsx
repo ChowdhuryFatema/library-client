@@ -1,5 +1,5 @@
 
-import bgImg from '../../assets/images/img-pattern.jpg';
+import bgImg from '../../assets/images/img-pattern.png';
 
 const Background = () => {
     return (

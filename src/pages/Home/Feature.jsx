@@ -7,7 +7,7 @@ const Feature = () => {
             <div className="dark:bg-gray-100 dark:text-gray-800">
                 <div>
                     <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-8 lg:items-center gap-y-7 lg:gap-y-0">
-                        <div className="col-auto lg:col-span-1">
+                        <div className="col-auto lg:col-span-1" data-aos="zoom-in" data-aos-duration="700">
                             <img src={featureImg2} alt="" className='overflow-hidden w-full' />
                         </div>
                         <div className="col-auto lg:col-span-2">

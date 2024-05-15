@@ -12,7 +12,7 @@ const BookCat = ({ book }) => {
     // }
 
     return (
-        <Link to={`/books/${category}`} className="flex flex-col dark:bg-gray-50 rounded-md">
+        <Link to={`/books/${category}`} className="flex flex-col dark:bg-gray-50 rounded-md" data-aos="zoom-in" data-aos-duration="500">
             <div className="cat-card flex justify-center items-center border bg-[#e8e8e886] relative">
                 <div className="overlay2 py-10">
                     <img alt="" className="object-cover w-44 h-64  dark:bg-gray-500 " src={image} />

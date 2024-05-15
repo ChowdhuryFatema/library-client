@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="footer-bg">
             <div className="footer p-10 text-base-content">
                 <aside>
-                    <Link to="/" className="flex gap-1 items-center">
+                    <Link to="/" className="flex gap-1 items-center" data-aos="fade-down" data-aos-duration="500">
                         <img className="w-10 h-10 md:w-14 md:h-14" src={logoImg} alt="" />
                         <span className="text-4xl md:text-5xl font-bold font-rancho logo py-2">Library</span>
                     </Link>

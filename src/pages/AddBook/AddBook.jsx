@@ -49,7 +49,6 @@ const AddBook = () => {
                 }
             })
     }
-
     return (
         <div className="add-book min-h-[calc(100vh-80px)] relative">
             <div className="overlay1">
@@ -70,7 +69,6 @@ const AddBook = () => {
                                 <input type="text" name="name" placeholder="Book Name" className="border py-3 px-2 outline-none w-full bg-transparent text-white rounded-md" />
                             </div>
                         </div>
-
                         <div>
                             <div className="space-y-2">
                                 <p className="text-white text-lg">Short description</p>

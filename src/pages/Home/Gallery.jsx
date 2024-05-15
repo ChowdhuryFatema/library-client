@@ -2,9 +2,9 @@
 
 const Gallery = () => {
     return (
-        <div>
+        <div className="max-w-7xl mx-auto px-5">
             <section className="py-6 dark:bg-gray-100 dark:text-gray-900">
-                <div className="container grid grid-cols-2 p-4 mx-auto md:grid-cols-4">
+                <div className="grid grid-cols-2 md:grid-cols-4">
                     <img src="https://cms.studyinsweden.se/app/uploads/2016/04/cecilia_larsson_lantz-stockholm_university_library-2614-902x602.jpg" alt="" className="scale-95 hover:scale-100 duration-500 overflow-hidden w-full h-full col-span-2 row-span-2 rounded shadow-sm min-h-96 md:col-start-3 md:row-start-1 dark:bg-gray-500 aspect-square object-cover" />
 
                     <img alt="" className="scale-95 hover:scale-100 duration-500 overflow-hidden w-full h-full rounded shadow-sm min-h-48 dark:bg-gray-500 aspect-square object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsZ4pjBtMEQ1kdrQgPaPUY01nvR_MxOii72SOp3F0JYA&s" />
