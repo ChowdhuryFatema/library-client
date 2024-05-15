@@ -1,8 +1,19 @@
-# React + Vite
+## Website Name: Library 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Live Link: https://library-2dd53.web.app/
+### Category Name: assignment_category_0008/Library Management System
 
-Currently, two official plugins are available:
+### Features:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- This is a online library store management website.
+
+- User can create an account and Login via Gmail and Github firebase authentication.
+ 
+- Users can set dark and light mood on the website.
+
+- When the user selects the book category, the details of that category will be displayed, and the user can pick the book and the total number of books will be reduced by one.
+- When the user returns the book, the total number of books in that category will increase by one.
+ 
+- All book route has a button called show all available, if the user wants to see the available books. Books whose number is less than 0 will not be displayed.
+
+- Users can view all books in list and grid format.

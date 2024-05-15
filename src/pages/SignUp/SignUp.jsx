@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import signUpImg from '../../assets/images/login.jpg';
+import signUpImg from '../../assets/images/login.png';
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { LuEye, LuEyeOff } from "react-icons/lu";
@@ -66,10 +66,12 @@ const SignUp = () => {
     return (
         <div className="">
             <div className="max-w-6xl mx-auto px-5 py-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 bg-white items-center shadow-lg">
-                    <div className="p-10 bg-white"  data-aos="zoom-in" data-aos-duration="500">
+                <div className="grid grid-cols-1 md:grid-cols-2 items-center shadow-lg">
+                    <div className="p-10" >
                         <div className="mb-4">
-                            <h2 className="text-5xl font-semibold text-center text-red-500">Sign Up</h2>
+                            <div className="mb-10">
+                                <h2 className="text-4xl md:text-5xl font-bold heading relative logo text-center">Sign Up</h2>
+                            </div>
                         </div>
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="space-y-2">
@@ -90,8 +92,8 @@ const SignUp = () => {
                                         onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-2">
 
                                         {showPassword ?
-                                            <LuEye className="text-red-500" size={20} /> :
-                                            <LuEyeOff className="text-red-500" size={20} />}
+                                            <LuEye size={20} /> :
+                                            <LuEyeOff size={20} />}
                                     </p>
                                 </div>
 

@@ -17,7 +17,10 @@ const Footer = () => {
                         <img className="w-10 h-10 md:w-14 md:h-14" src={logoImg} alt="" />
                         <span className="text-4xl md:text-5xl font-bold font-rancho logo py-2">Library</span>
                     </Link>
-                    <p className="text-white">ACME Industries Ltd.<br />Providing reliable tech since 1992</p>
+                    <p className="text-white">
+                        In the pages of a book, a world awaits, <br />
+                        a library of dreams, knowledge, <br />
+                        and infinite gates</p>
                 </aside>
                 <nav className="text-white">
                     <h6 className="footer-title">Services</h6>
@@ -48,7 +51,7 @@ const Footer = () => {
                         <div className="join">
 
 
-                            <input type="text" placeholder="username@site.com" className="px-3 w-full rounded-l-md" />
+                            <input type="text" placeholder="Email" className="px-3 w-full rounded-l-md" />
 
 
                             <button className="btn bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE] font-bold border-none join-item">Subscribe</button>

@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import loginImg from '../../assets/images/signup.jpg';
+import loginImg from '../../assets/images/signup.png';
 import { useForm } from "react-hook-form"
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
@@ -63,8 +63,10 @@ const Login = () => {
                         <img src={loginImg} alt="" />
                     </div>
                     
-                    <div className="col-auto md:col-span-2 w-full space-y-3 bg-white dark:bg-gray-800 shadow-xl p-8">
-                        <h2 className="text-4xl font-bold text-center text-red">Login</h2>
+                    <div className="col-auto md:col-span-2 w-full space-y-3 dark:bg-gray-800 shadow-xl p-8">
+                    <div className="mb-10">
+                <h2 className="text-4xl md:text-5xl font-bold heading relative logo text-center">Login</h2>
+            </div>
 
 
                         <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
@@ -87,8 +89,8 @@ const Login = () => {
                                         onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-2">
 
                                         {showPassword ?
-                                            <LuEye className="text-red" size={20} /> :
-                                            <LuEyeOff className="text-red" size={20} />}
+                                            <LuEye size={20} /> :
+                                            <LuEyeOff size={20} />}
                                     </p>
 
                                 </label>
