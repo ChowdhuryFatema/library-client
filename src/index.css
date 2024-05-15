@@ -101,11 +101,23 @@ h2, h3, h4 {
 .heading::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: -60px;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #C03EE2;
     opacity: 100%;
-    width: 50px;
+    width: 200px;
+    height: 2px;
+}
+.heading::after {
+    content: '';
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #C03EE2;
+    opacity: 100%;
+    width: 150px;
     height: 2px;
 }
 

@@ -25,7 +25,7 @@ const Banner = () => {
                         </div>
 
                     </div>
-                    <div className='absolute bottom-0 left-2/4 z-10 -translate-x-[50%] w-full translate-y-[25%] max-w-7xl'>
+                    <div className='absolute bottom-0 left-2/4 -translate-x-[50%] w-full translate-y-[25%] max-w-7xl z-0'>
                         <img className='w-full' src={bannerImg} alt="" />
                     </div>
                 </div>
