@@ -30,6 +30,7 @@ const BorrowedBook = ({ borrowedBook, setData, data }) => {
     }
 
     return (
+        <>
         <div className="grid grid-cols-3 items-center dark:bg-gray-50 rounded-md shadow-md gap-3">
             <div className="flex col-span-1 justify-center items-center border bg-[#e8e8e838] relative h-full">
                 <img alt="" className="object-cover w-48 h-36 md:h-40 p-5 dark:bg-gray-500 scale-110 hover:scale-125 duration-500" src={image} />
@@ -67,6 +68,7 @@ const BorrowedBook = ({ borrowedBook, setData, data }) => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

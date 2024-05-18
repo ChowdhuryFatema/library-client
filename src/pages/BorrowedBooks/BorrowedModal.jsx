@@ -42,10 +42,6 @@ const BorrowedModal = ({name, image, category, rating}) => {
         })
     }
 
-
-    const allReadyAdded = borrowed.find(borrow => borrow.name == name) || {};
-  
-
     useEffect(() => {
         axios.get(`https://library-server-teal.vercel.app/borrowedBooks`)
             .then(data => {
@@ -80,9 +76,12 @@ const BorrowedModal = ({name, image, category, rating}) => {
                                 <p className="py-3">Return Date</p>
                                 <input className="border py-1 px-2 rounded w-full" name="return_date" type="date" placeholder="Return Date" />
                             </label>
-                            <button onClick={()=>document.getElementById('my_modal_3').close()} type="submit" className="btn bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE] font-bold border-none" disabled={allReadyAdded.name == name}>
+                            <button onClick={()=>document.getElementById('my_modal_3').close()} type="submit" className="btn bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE] font-bold border-none">
                                 Submit
                             </button>
+                            <a onClick={()=>document.getElementById('my_modal_3').close()} className="btn bg-transparent font-bold border text-[#AF34E4] ml-3 border-[#AF34E4]" >
+                                Cancel
+                            </a>
                         </form>
                     </div>
                 </div>
