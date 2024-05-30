@@ -5,6 +5,7 @@ import BookCard from "./BookCard";
 import { useEffect, useState } from "react";
 import BookList from "./BookList";
 import { Helmet } from "react-helmet-async";
+import SearchBook from "./SearchBook";
 
 
 const AllBooks = () => {
@@ -64,10 +65,8 @@ const AllBooks = () => {
                             <div>
                                 <button onClick={handleAvailableBooks} className="btn bg-gradient-to-r bg-transparent logo font-bold border border-[#d64adf]">Show available books</button>
                             </div>
-                            <form onSubmit={handleSearch} className="join">
-                                <input className="input input-bordered join-item" placeholder="Search" name="search"/>
-                                <button className="btn join-item bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE] font-bold">Search</button>
-                            </form>
+
+                            <SearchBook handleSearch={handleSearch}></SearchBook>
 
                             <div className="rounded-full bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE]">
                                 <button onClick={handleViewList} className="btn bg-transparent tooltip tooltip-bottom hover:bg-[#D64ADF]" data-tip="List layout"><TfiViewListAlt className="text-white" /></button>
@@ -77,10 +76,11 @@ const AllBooks = () => {
 
                         {/* small device */}
                         <div className="md:hidden flex flex-col md:flex-row justify-between items-center gap-5">
-                            <form onSubmit={handleSearch} className="join w-full">
-                                <input className="input input-bordered join-item w-full" placeholder="Search" name="search"/>
-                                <button className="btn join-item bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE] font-bold">Search</button>
-                            </form>
+
+                            <div className="w-full">
+                                <SearchBook handleSearch={handleSearch}></SearchBook>
+                            </div>
+
                             <div className="flex justify-between gap-5 w-full">
                                 <div>
                                     <button onClick={handleAvailableBooks} className="btn bg-gradient-to-r bg-transparent logo font-bold border border-[#d64adf]">Show available books</button>
