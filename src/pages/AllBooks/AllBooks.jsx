@@ -77,7 +77,7 @@ const AllBooks = () => {
 
                         {/* small device */}
                         <div className="md:hidden flex flex-col md:flex-row justify-between items-center gap-5">
-                            <form className="join w-full">
+                            <form onSubmit={handleSearch} className="join w-full">
                                 <input className="input input-bordered join-item w-full" placeholder="Search" name="search"/>
                                 <button className="btn join-item bg-gradient-to-r from-[#E855DE] text-white to-[#5400EE] font-bold">Search</button>
                             </form>
