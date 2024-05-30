@@ -38,18 +38,18 @@ const SignUp = () => {
 
         createUser(email, password)
             .then(result => {
-                console.log(result)
+                console.log(result);
 
-                logOutUser()
-                navigate('/login')
+                logOutUser();
+                navigate('/login');
 
                 Swal.fire({
                     text: "User Created Successfully!",
                     icon: "success"
                 });
-                e.target.reset()
+                e.target.reset();
 
-                updateUserProfile(name, photo)
+                updateUserProfile(name, photo);
 
             })
             .catch(error => {

@@ -11,7 +11,7 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false)
     const { signInUser, googleLogin, gitHubLogin } = useContext(AuthContext);
     const location = useLocation();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const {
         register,
@@ -55,7 +55,7 @@ const Login = () => {
     }
 
     return (
-        <div className="">
+        <div className="mb-10">
             <div className="max-w-5xl mx-auto px-5">
                 <div className="grid grid-cols-1 md:grid-cols-3 dark:bg-gray-800 items-center mt-10">
 

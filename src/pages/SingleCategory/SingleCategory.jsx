@@ -5,6 +5,7 @@ import SingleCat from "./SingleCat";
 const SingleCategory = () => {
 
     const category = useLoaderData();
+    console.log(category);
 
     return (
         <div>

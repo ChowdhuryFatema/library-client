@@ -5,6 +5,7 @@ import auth from "../firebase/firebase";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import axios from "axios";
 
+
 export const AuthContext = createContext(null)
 
 const AuthProvider = ({children}) => {
@@ -64,15 +65,16 @@ const AuthProvider = ({children}) => {
     }
 
     useEffect(() => {
-        const unSubscribe = onAuthStateChanged(auth, currentUser => {
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
 
+            // const userEmail = currentUser?.email || user?.email;
+            // const loggedUser = {email: userEmail};
 
             const userEmail = currentUser?.email || user?.email;
             const loggedUser = {email: userEmail}
 
             setUser(currentUser);
-            setLoading(false)
-
+            setLoading(false);
             // if user exists then issue a token 
             if( currentUser ){
                 axios.post('https://library-server-teal.vercel.app/jwt', loggedUser, {withCredentials: true})
@@ -86,11 +88,12 @@ const AuthProvider = ({children}) => {
                 })
             }
 
-
         });
+        return () => {
+            return unsubscribe();
+        }
+    }, [user])
 
-        return () => unSubscribe();
-    }, [user]);
 
     const authInfo = {
         user,

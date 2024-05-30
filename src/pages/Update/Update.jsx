@@ -53,14 +53,12 @@ const Update = () => {
     return (
         <div className="add-book min-h-[calc(100vh-80px)] relative">
             <div className="overlay1">
-                <div className="max-w-5xl mx-auto px-5 py-16 relative z-20">
+                <div className="max-w-4xl mx-auto px-5 py-16 relative z-20">
                     <div className="mb-8">
                         <h2 className="text-red text-3xl md:text-5xl text-red font-semibold text-center text-white">Update</h2>
                     </div>
                     <form onSubmit={handleUpdate} className="space-y-2 md:space-y-5">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
-
-
+                        <div>
                             <div className="space-y-2">
                                 <p className="text-white text-lg">Photo URL</p>
                                 <input type="url" defaultValue={image} name="image" placeholder="Photo URL" className="border py-3 px-2 outline-none w-full bg-transparent text-white rounded-md" />
@@ -70,11 +68,7 @@ const Update = () => {
                                 <input type="text" name="name" defaultValue={name} placeholder="Book Name" className="border py-3 px-2 outline-none w-full bg-transparent text-white rounded-md" />
                             </div>
                         </div>
-
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 md:gap-5">
-
-
-
                             <div className="space-y-2">
                                 <p className="text-white text-lg">Category</p>
                                 <select name="category" className="border px-2 outline-none w-full bg-transparent text-white rounded-md py-3">
@@ -85,8 +79,6 @@ const Update = () => {
                                     <option selected={category === 'Drama'}  className="text-black" value="Drama">Drama</option>
                                 </select>
                             </div>
-
-
                             <div className="space-y-2">
                                 <p className="text-white text-lg">Rating</p>
                                 <select name="rating" className="border px-2 outline-none w-full bg-transparent text-white rounded-md py-3">
@@ -98,29 +90,14 @@ const Update = () => {
                                     <option selected={rating == 5} className="text-black" value="5">5</option>
                                 </select>
                             </div>
-                        </div>
-
-
-
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
-
                             <div className="space-y-2">
                                 <p className="text-white text-lg">Author Name</p>
                                 <input type="text" defaultValue={author} name="author" placeholder="Author Name" className="border py-3 px-2 outline-none w-full bg-transparent text-white rounded-md" />
                             </div>
-
-
-
                         </div>
-
-
                         <div className="pt-5">
                             <button className="btn bg-gradient-to-r from-[#E855DE] text-white border-none to-[#5400EE] font-bold text-lg">Add Book</button>
                         </div>
-
-
-
                     </form>
                 </div>
             </div>
