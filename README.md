@@ -59,7 +59,7 @@ Clone the repository:
 #### For the client side:
 - cd client
 - npm install
-- 
+  
 #### For the server side:
 - cd server
 - npm install
@@ -70,12 +70,12 @@ Clone the repository:
 - Running the Application
 
 #### Start the server:
-cd server
-nodemon index.js
+- cd server
+- nodemon index.js
 
 #### Start the client:
-cd client
-npm run dev
+- cd client
+- npm run dev
 
 
 
