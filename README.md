@@ -45,21 +45,21 @@ Welcome to Library, your online destination for books. Easily explore our extens
 - Client Side Hosting: Firebase
 
 ### Installation
-Clone the repository:
 
-### Make sure you have the following installed:
+#### Make sure you have the following installed:
 - Node.js
 - npm
 - Git
-
-- git clone https://github.com/ChowdhuryFatema/library-client.git
+  
+#### Clone the repository:
+- git clone https://github.com/ChowdhuryFatema/tech-app-client.git
 - cd your-repository
 - Install dependencies:
 
 #### For the client side:
 - cd client
 - npm install
-  
+ 
 #### For the server side:
 - cd server
 - npm install
@@ -76,6 +76,15 @@ Clone the repository:
 #### Start the client:
 - cd client
 - npm run dev
+
+
+
+
+
+
+
+
+
 
 
 
