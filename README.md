@@ -8,15 +8,15 @@ Welcome to Library, your online destination for books. Easily explore our extens
 ## Features:
 
 - This is an online library store management website.
-- 
+  
 - User can create an account and log in via Gmail and Github Firebase authentication.
-- 
+  
 - When the user selects the book category, the details of that category will be displayed, and the user can pick the book and the total number of books will be reduced by one.
 
- - When the user returns the book, the total number of books in that category will increase by one.
- - 
+- When the user returns the book, the total number of books in that category will increase by one.
+   
 - All book route has a button called Show All Available if the user wants to see the available books. Books whose number is less than 0 will not be displayed.
-- 
+  
 - Users can view all books in list and grid format.
 
 
